@@ -4,7 +4,7 @@ provider "aws" {
 
 # 1. Enable Inspector v2
 resource "aws_inspector2_enabler" "this" {
-  account_ids = ["123456789012"] # Replace with your AWS Account ID
+  account_ids = ["724585721064"] # AWS Account ID
   resource_types = ["EC2", "ECR", "LAMBDA"]
 }
 
@@ -16,7 +16,7 @@ resource "aws_sns_topic" "inspector_reports" {
 resource "aws_sns_topic_subscription" "email" {
   topic_arn = aws_sns_topic.inspector_reports.arn
   protocol  = "email"
-  endpoint  = "your-email@example.com" # change this
+  endpoint  = "dchoi@aft.org" # Email
 }
 
 # 3. Lambda IAM role
